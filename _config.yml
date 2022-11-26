@@ -29,7 +29,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  lmatte7
 
 # Build settings
-theme: no-style-please
+remote_theme: no-style-please
 plugins:
   - jekyll-feed
 
