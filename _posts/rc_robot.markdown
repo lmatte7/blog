@@ -1,5 +1,15 @@
-# RC Robot Blog
+# Making an RC Vaccum
 
-This is a test to try out adding new files in the editor to blog with o
+So all of this started when I filed my first patent. This blog has nothing to _do_ with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn't exist without the patent. 
 
-this could be really cool
+What exact was started, and what can it do? Feel free to look below and award internet points as apporpriate. 
+
+
+What is it? How did I do it? How many things did I fry in the process of making it? (Hint: too damn many). These and all your other questions will be answered after the break.
+
+----
+
+
+
+
+
