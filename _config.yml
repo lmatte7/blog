@@ -38,6 +38,7 @@ theme_config:
   date_format: "%Y-%m-%d" # customize how date is formatted
   show_description: false # show blog description in home page
 
+goat_counter: "dumptruck" # put your GoatCounter name if you want to use GoatCounter analytics
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
