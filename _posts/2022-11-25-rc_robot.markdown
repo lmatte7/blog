@@ -1,4 +1,9 @@
-# Making an RC Vaccum
+---
+layout: post
+title:  "Making an RC Vaccum"
+date:   2022-11-26 14:49:38 -0600
+categories: Maker
+---
 
 So all of this started when I filed my first patent. This blog has nothing to _do_ with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn't exist without the patent. 
 
