@@ -1,9 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-27T19:00:18-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Making an RC Vaccum</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Vaccum" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;So all of this started when I filed my first patent. This blog has nothing to &lt;em&gt;do&lt;/em&gt; with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-29T09:14:04-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Making an RC Vaccum</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Vaccum" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;So all of this started when I filed my first patent. This blog has nothing to &lt;em&gt;do&lt;/em&gt; with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.&lt;/p&gt;
 
-&lt;p&gt;What exact was started, and what can it do? Feel free to look below and award internet points as apporpriate.&lt;/p&gt;
-
-&lt;p&gt;What is it? How did I do it? How many things did I fry in the process of making it? (Hint: too damn many). These and all your other questions will be answered after the break.&lt;/p&gt;
+&lt;p&gt;What is it? How did I do it? How many things did I fry in the process of making it? (Hint: far too many). These and all your other questions will be answered after the break.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5nx7JJ1EKl8&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name></name></author><category term="Maker" /><summary type="html">So all of this started when I filed my first patent. This blog has nothing to do with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.</summary></entry></feed>
+&lt;iframe width=&quot;720&quot; height=&quot;480&quot; src=&quot;https://www.youtube.com/embed/Bek-pxtkyso&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Feel free to award internet points as appropriate.&lt;/p&gt;
+
+&lt;p class=&quot;iota&quot;&gt;👏👏👏👏👏👏&lt;/p&gt;
+
+&lt;p&gt;Ultimately it may be better to say this started at a yard sale when I picked up this little vacuum for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn’t put too much work into them. This turned out to be a mid range model that had a suprising number of features and not great reviews.&lt;/p&gt;
+
+&lt;p&gt;After snatching the little thing up it sat around for a few months until I decided exactly what I wanted to do with it. I ultimately ended up on making it the new platform for a room exploration prototype that’s been in the works for a few years (and will eventually get its own blog post). Before going through the effort of taking the existing prototype apart, designing new platforms for everything to sit on and integrating it into this vacuum I wanted to kick the tires, and what better way to get a feel for the components than to get it working with an old Playstation controller so I can drive it around, vacuum some stuff up and try to improve its (currently) fairly sad performance.&lt;/p&gt;
+
+&lt;p&gt;The first step to do all of this though was a good ol’ fashioned&lt;/p&gt;
+
+&lt;h2 id=&quot;teardown-and-part-cataloging&quot;&gt;Teardown and part cataloging&lt;/h2&gt;
+
+&lt;p&gt;Let’s start with a nice before picture and then we’ll get to the innards
+&lt;img src=&quot;/assets/images/hoover_top.png&quot; alt=&quot;hoover_top&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And after a reasonable straightforward top removal we ended up with this:
+&lt;img src=&quot;/assets/images/hoover_no_top.png&quot; alt=&quot;hoover_no_top&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above photo leaves out the collector for dirt/dust/debris, the vacuum motor and a few bump sensors. Each sensor connects to the main board with a easy to remove plug and there weren’t any gotchas during disassembly.&lt;/p&gt;
+
+&lt;p&gt;I am in no way an expert at tearing things apart successfully, but I would give Hoover a ifixit (sometimes ibreakit) score of 9/10. Everything is included in a way that makes sense and there isn’t anything that can’t be taking out in a way that doesn’t let you put it back in again.&lt;/p&gt;
+
+&lt;p&gt;The brains of our little vacuum friend are a STM32F101, providing a pretty beefy chip for what it can do out of the box. 
+&lt;img src=&quot;/assets/images/stm_closeup.png&quot; alt=&quot;close up of stm32&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For a bit I did go down the road of trying to read from the chip and possibly reprogram it with my own code (which would be &lt;em&gt;very&lt;/em&gt; nice since the board would give me connections to everything right away) but ultimately decided not too because:&lt;br /&gt;
+1) I couldn’t get anything that made sense out of any of the open pins on the board 
+2) I don’t know enough about hardware to say for certain there wasn’t some kind of protection in place for the chip and
+3) This wasn’t the particular rabbit hole I wanted to go down that day.&lt;/p&gt;
+
+&lt;p&gt;I gave up and decided to replace the board with something else to drive everything, but since this vacuum is so easy to reassemble I set it aside to maybe come back and figure it out later.&lt;/p&gt;
+
+&lt;p&gt;Contiuing on with the tear down! There are a lot of gooides in this little vacuum that would be easy to repurpose without too much trouble. Keeping in mind that the code would have to be reimplemented to get everything working it has nice components with plugs that include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Motors with hall effects sensors 
+&lt;img src=&quot;/assets/images/motor_hall_effect.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;IR distance sensors&lt;/li&gt;
+  &lt;li&gt;Bump sensors&lt;/li&gt;
+  &lt;li&gt;2 12V motors&lt;/li&gt;
+  &lt;li&gt;A 12V 2000mAh battery
+&lt;img src=&quot;/assets/images/hoover_battery.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Just having all of this would be worth the $20 I paid for it already, but every component has clip on connectors that make hooking them up to something else a &lt;em&gt;breeze&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;With the teardown completed, the parts catalouged and the screws (mostly) stored somewhere safe it was time to&lt;/p&gt;
+
+&lt;h2 id=&quot;figure-out-how-this-stuff-works&quot;&gt;Figure out how this stuff works&lt;/h2&gt;
+&lt;p&gt;I decided to spend most of my time focusing on how to get the motors working, since getting each motor to run on command would get the vacuum doing it’s job of, uh… vacuuming.&lt;/p&gt;
+
+&lt;p&gt;I couldn’t find anything online to help me figure out how the motors worked beyond knowing they were normal DC motors (except the vacuum motor, which I’ll get to in a bit). The two primary wheel motors each have a six pin connector with two powering the motor and the rest for the hall effect sensor. I used a multimeter to test the board as it was running and saw the voltage sat at around 5v consistently, and that &lt;em&gt;should&lt;/em&gt; be enough to trigger the motors so testing consisted of running 5V to each pin and seeing what turned the motor. I found the ground pin marked on the board attached to the motor, so it was just a matter of testing each pin to see when the motor responded.&lt;/p&gt;
+
+&lt;p&gt;For this I used my trusty DIY bench top power supply. It’s ain’t pretty, but it works great for what I need.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/hey_it_does_a_good_job.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Running 5V to two wires and testing each ping on the motor cable showed me the first two were what I needed. Pin 1 is ground, pin 2 is motor positive voltage. These were 12V motors, so I was able to run them up to 12 volts with no issues (and no smoke).&lt;/p&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Explain testing for brush motor&lt;/li&gt;
+  &lt;li&gt;Explain testing for vacuum motor&lt;/li&gt;
+  &lt;li&gt;Explain setup with Pi and Adafruit motor controller&lt;/li&gt;
+  &lt;li&gt;Explain code&lt;/li&gt;
+  &lt;li&gt;Wrap up&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Maker" /><summary type="html">So all of this started when I filed my first patent. This blog has nothing to do with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.</summary></entry></feed>

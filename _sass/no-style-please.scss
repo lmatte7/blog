@@ -2,9 +2,12 @@
 @mixin dark-appearance {
   filter: invert(1);
   img {
-    filter: invert(0);
+    filter: invert(1);
   }
   iframe {
+    filter: invert(1);
+  }
+  .iota {
     filter: invert(1);
   }
 }
