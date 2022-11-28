@@ -4,6 +4,9 @@
   img {
     filter: invert(0);
   }
+  iframe {
+    filter: invert(1);
+  }
 }
 
 body[a="dark"] { @include dark-appearance; }
