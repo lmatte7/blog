@@ -7,7 +7,8 @@ entries:
       - title: a blog about technology, making and whatever else
       - title: github 
         url: https://github.com/lmatte7
-      - title: "theme by <a href='https://riggraz.dev'>riggraz.dev</a>"
+      - title: "theme by <a href='https://github.com/riggraz/no-style-please'>riggraz.dev</a>"
+      - title: "rss feed <a href='feed.xml'>here</a>"
 
   - title: all posts
     post_list:
@@ -16,12 +17,9 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: posts by category
-    post_list:
-      category: example2
-      show_more: true
-      show_more_text: See more posts...
-      show_more_url: example2-archive.html
-
-  - title: rss
-    url: feed.xml
+  # - title: posts by category
+    # post_list:
+      # category: example2
+      # show_more: true
+      # show_more_text: See more posts...
+      # show_more_url: example2-archive.html
