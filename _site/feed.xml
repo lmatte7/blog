@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-29T09:14:04-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Making an RC Vaccum</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Vaccum" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;So all of this started when I filed my first patent. This blog has nothing to &lt;em&gt;do&lt;/em&gt; with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-29T14:51:46-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Making an RC Roobma</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Roobma" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;So all of this started when I filed my first patent. This blog has nothing to &lt;em&gt;do&lt;/em&gt; with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.&lt;/p&gt;
 
 &lt;p&gt;What is it? How did I do it? How many things did I fry in the process of making it? (Hint: far too many). These and all your other questions will be answered after the break.&lt;/p&gt;
 
@@ -11,7 +11,7 @@
 
 &lt;p class=&quot;iota&quot;&gt;👏👏👏👏👏👏&lt;/p&gt;
 
-&lt;p&gt;Ultimately it may be better to say this started at a yard sale when I picked up this little vacuum for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn’t put too much work into them. This turned out to be a mid range model that had a suprising number of features and not great reviews.&lt;/p&gt;
+&lt;p&gt;So first of all yes this isn’t a roomba, but that’s what this little fellow is &lt;em&gt;trying&lt;/em&gt; to be. It may also be better to say this started at a yard sale when I picked up this little vacuum for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn’t put too much work into them. This turned out to be a mid range model that had a suprising number of features and not great reviews.&lt;/p&gt;
 
 &lt;p&gt;After snatching the little thing up it sat around for a few months until I decided exactly what I wanted to do with it. I ultimately ended up on making it the new platform for a room exploration prototype that’s been in the works for a few years (and will eventually get its own blog post). Before going through the effort of taking the existing prototype apart, designing new platforms for everything to sit on and integrating it into this vacuum I wanted to kick the tires, and what better way to get a feel for the components than to get it working with an old Playstation controller so I can drive it around, vacuum some stuff up and try to improve its (currently) fairly sad performance.&lt;/p&gt;
 
@@ -63,13 +63,44 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/hey_it_does_a_good_job.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Running 5V to two wires and testing each ping on the motor cable showed me the first two were what I needed. Pin 1 is ground, pin 2 is motor positive voltage. These were 12V motors, so I was able to run them up to 12 volts with no issues (and no smoke).&lt;/p&gt;
+&lt;p&gt;Running 5V to two wires and testing each pin on the motor cable showed me the first two were what I needed. Pin 1 is ground, pin 2 is motor positive voltage. These were 12V motors, so I was able to run them up to 12 volts with no issues (and no smoke).&lt;/p&gt;
 
-&lt;p&gt;TODO&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Explain testing for brush motor&lt;/li&gt;
-  &lt;li&gt;Explain testing for vacuum motor&lt;/li&gt;
-  &lt;li&gt;Explain setup with Pi and Adafruit motor controller&lt;/li&gt;
-  &lt;li&gt;Explain code&lt;/li&gt;
-  &lt;li&gt;Wrap up&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Maker" /><summary type="html">So all of this started when I filed my first patent. This blog has nothing to do with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.</summary></entry></feed>
+&lt;p&gt;This method worked for getting the brush motors to work as well, just with less pins and no known ground. I tested this one with around 3V (since I didn’t know what the ground pin was) and very quick voltage tests, and still no smoke so everything worked out in the end.&lt;/p&gt;
+
+&lt;p&gt;The final motor to figure out was the vacuum motor, and this one proved to be a bit tricket.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/vacuum_motor.png&quot; alt=&quot;picture of vacuum motor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I was able to find some information based on the model, but testing each wire with the same method used for the other motors didn’t produce any results. I had recently taken apart a cordless stick vacuum and saw it’s vacuum motor was actually brushless, so I thought this could be the same situation. This motor wasn’t easily taken apart, and I really didn’t want to break it since vacuuming, is the &lt;em&gt;main&lt;/em&gt; feature of a… vacuum.&lt;/p&gt;
+
+&lt;p&gt;Thankfully I had some RC equipment that I could use to test the motor. Brushless motors are three phase, which means the motor needs three wires with pulses sent at a set frequency to get it to spin. I grabbed an electronic speed controller (ESC), powered it up and started testing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/vacuum_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;
+After running through each pin and every combination of wires (the three wires in a brushless motor aren’t order dependent, so there weren’t too many to try out) nothing was spinng and no noises. I decided to peel up the stickers on the motor and found a LB11867F motor controller! I of course knew exactly what this motor was an realized I needed to ground a pin to let the motor run at full speed*.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;* This is no way reflects what actually happened which included a lot of googling, trying to translate Chinese datasheets and guessing that I could replace a potiometer with a ground to get the motor spinning.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;With all the motors spinning, directions figured out and lots of reference photos taken I was ready to move on to hooking it all up.&lt;/p&gt;
+
+&lt;h2 id=&quot;ahead-there-be-smoke&quot;&gt;Ahead there be smoke…&lt;/h2&gt;
+
+&lt;p&gt;To drive all of the motors I wanted to reuse the platform for my previous prototype, a Raspberry Pi Zero W with an Adafruit Motor Controller. For the kind of work I was doing I could definetly use something with less power, but I didn’t want to redo work that was already done.&lt;/p&gt;
+
+&lt;p&gt;I also had code already written that would connect to a PS4 controller with bluetooth and use the joysticks to drive two directional motors on a tracked vehicle, so why redo that work. The final wiring proved to be fairly simple, with each of the four motors hooked up to a block on the motor controller, the power from the batteries going into the power on the controller and a buck converter stepping down the voltage to run the Pi.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/three_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A quick test confirmed all of the motors worked, but I didn’t have time to reassemble and test the full vacuum. Things got busy and it sat around for a few weeks before I got back to it, and at some point the wires came loose. When I redid the wiring I was in a rush, and didn’t notice the wires to the buck converter were backwards, so when I plugged it in there was a &lt;em&gt;lot&lt;/em&gt; of smoke.&lt;/p&gt;
+
+&lt;p&gt;After investigating the damage &lt;em&gt;not only did I fry a Pi Zero but also the motor controller&lt;/em&gt;. This came at a time when Pi’s are incredibly hard to find, and especially Pi zeros. Luckily I had a backup I could grab from another project, and even more fortuantly I found one about a month later using the wonderful &lt;a href=&quot;https://rpilocator.com/&quot;&gt;Pi Locator&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I ended up taking out the buck converter (also fried) and just using a small USB power bank to run the Pi. The buck converter will get added back in later, but maybe a model with more protections built in.&lt;/p&gt;
+
+&lt;p&gt;Finally everything was ready. The code was &lt;a href=&quot;https://github.com/lmatte7/hoover_rc/blob/main/run.py&quot;&gt;done&lt;/a&gt;, the batteries charged and the top back on. It was time to get to work! The only problem was the batteries that came with the vacuum weren’t up to the job. It was unable to go a few feet with the vacuum on before slowing down to a crawl. There are lots of reasons this could have happened, but I decided to take call it a battery problem and fix it with a swap.&lt;/p&gt;
+
+&lt;p&gt;After swapping in a 14v LiPo battery for racing drones the vacuum ran &lt;em&gt;great&lt;/em&gt;. It had better movement, suction and lasted longer. There was even enough room in the front of the vacuum that the motor controller stayed nice and cool throughout a whole house vacuum.&lt;/p&gt;
+
+&lt;p&gt;Overall this was a fun time (fried boards aside) and I learned a lot about a few different subjects. There’s still work to do for some of the sensors (I really want to get the hall effect sensors on the motors working) but for now my RC roomba works great. Just for parts alone I would happily pick another one of these up at a yard sale and I may need to find another cheap robo vacuum to compare the differences.&lt;/p&gt;</content><author><name></name></author><category term="Maker" /><summary type="html">So all of this started when I filed my first patent. This blog has nothing to do with said patent, beyond it being ultimately part of a version 4 prototype, but this ridulous thing wouldn’t exist without the patent.</summary></entry></feed>

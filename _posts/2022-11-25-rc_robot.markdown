@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Making an RC Vaccum"
+title:  "Making an RC Roobma"
 date:   2022-11-26 14:49:38 -0600
 categories: Maker
 ---
@@ -20,7 +20,7 @@ Feel free to award internet points as appropriate.
 👏👏👏👏👏👏
 {: .iota}
 
-Ultimately it may be better to say this started at a yard sale when I picked up this little vacuum for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn't put too much work into them. This turned out to be a mid range model that had a suprising number of features and not great reviews. 
+So first of all yes this isn't a roomba, but that's what this little fellow is _trying_ to be. It may also be better to say this started at a yard sale when I picked up this little vacuum for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn't put too much work into them. This turned out to be a mid range model that had a suprising number of features and not great reviews. 
 
 After snatching the little thing up it sat around for a few months until I decided exactly what I wanted to do with it. I ultimately ended up on making it the new platform for a room exploration prototype that's been in the works for a few years (and will eventually get its own blog post). Before going through the effort of taking the existing prototype apart, designing new platforms for everything to sit on and integrating it into this vacuum I wanted to kick the tires, and what better way to get a feel for the components than to get it working with an old Playstation controller so I can drive it around, vacuum some stuff up and try to improve its (currently) fairly sad performance. 
 
@@ -112,5 +112,4 @@ Finally everything was ready. The code was [done](https://github.com/lmatte7/hoo
 
 After swapping in a 14v LiPo battery for racing drones the vacuum ran _great_. It had better movement, suction and lasted longer. There was even enough room in the front of the vacuum that the motor controller stayed nice and cool throughout a whole house vacuum. 
 
-
-- Wrap up goes here
+Overall this was a fun time (fried boards aside) and I learned a lot about a few different subjects. There's still work to do for some of the sensors (I really want to get the hall effect sensors on the motors working) but for now my RC roomba works great. Just for parts alone I would happily pick another one of these up at a yard sale and I may need to find another cheap robo vacuum to compare the differences. 
