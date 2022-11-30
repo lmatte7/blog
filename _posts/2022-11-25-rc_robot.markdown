@@ -11,7 +11,7 @@ What is it? How did I do it? How many things did I fry in the process of making 
 
 ----
 
-<iframe width="100%" src="https://www.youtube.com/embed/Bek-pxtkyso" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="420" src="https://www.youtube.com/embed/Bek-pxtkyso" frameborder="0" allowfullscreen></iframe>
 ---
 
 
