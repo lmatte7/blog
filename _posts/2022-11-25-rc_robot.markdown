@@ -5,7 +5,7 @@ date:   2022-11-26 14:49:38 -0600
 categories: Maker
 ---
 
-All of this started when I filed my first patent. This blog has nothing to _do_ with said patent, beyond it being ultimately part of a version 4 prototype, but this fun thing wouldn't exist without the patent existing first. 
+All of this started when I filed my first patent. This blog has nothing to _do_ with said patent, beyond the end result ultimately being a part of a version 4 prototype, but this fun thing wouldn't exist without the patent existing first. 
 
 What is it? How did I do it? How many things did I fry in the process of making it? (Hint: too many). These and all your other burning questions will be answered after the break.
 
@@ -20,9 +20,9 @@ Feel free to award internet points as appropriate.
 👏👏👏👏👏👏
 {: .iota}
 
-So first of all yes this isn't a roomba, but that's what this little fellow is _trying_ to be. I picked this imposter up at a yard sale for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn't put too much work making custom components to build one. This turned out to be a mid range model that had a surprising number of features and not great product reviews. 
+So first of all yes this isn't a roomba, but that's what this little fellow _wants_ to be. I picked this imposter up at a yard sale for $20. I had no clue Hoover made robot vacuums and had a hope that Hoover wouldn't put too much work making custom components to build one. The more off the shelf components built in the easier it'd be for me to repurpose. I didn't have time to research exactly what it was before buying it, and it turned out to be a mid range model that had a surprising number of features and not great product reviews. 
 
-After snatching the little thing up it sat around for a few months until I decided exactly what I wanted to do with it. I ultimately ended up making it the new platform for a room exploration prototype that's been in the works for a few years (and will eventually get its own blog post). Before going through the effort of taking the existing prototype apart, designing new structures for components to sit on and integrating it into this vacuum I wanted to kick the tires, and what better way to get a feel for the components than to get it working with an old Playstation controller so it can drive it around, vacuum some stuff up and try to improve its (currently) fairly sad performance. 
+After snatching the little thing up it sat around for a few months while I decided exactly what to do with it. Eventually it would be the new prototype for a method of mapping rooms (soon to be open sourced and blogged about), but I wanted to kick the tires on this little guy first. So before going through the effort of taking the existing prototype apart, designing new structures for components to sit on and integrating it into this vacuum I thought it'd be fun to get it working with an old Playstation controller so it could drive it around, vacuum some stuff up and try to improve its (at the time) fairly sad performance. 
 
 The first step to get there was a good ol' teardown.
 
@@ -36,16 +36,16 @@ And after a reasonably straightforward top removal we ended up with this:
 
 The above photo leaves out the collector for dirt/dust/debris, the vacuum motor and a few bump sensors. Each sensor connects to the main board with an easy to remove connector and there weren't any gotchas during disassembly. 
 
-I am in no way an expert at tearing things apart successfully, but I would give Hoover an ifixit (for me it's usually ibreakit) score of 9/10. Everything is included in a way that makes sense and there isn't anything that can't be removed in a way that doesn't let you put it back in again. If anything breaks on this vacuum and a replacement part can be found it wouldn't be difficult to swap the new part in. 
+I am in no way an expert at tearing things apart successfully, but I would give Hoover an ifixit (for me it's usually ibreakit) score of 9/10. Everything is included in a way that makes sense and there isn't anything that can't be removed in a way that doesn't let you put it back in again. If anything breaks on this vacuum and a replacement part is available it wouldn't be difficult to swap the new part in. 
 
 The brains of our little vacuum friend are a STM32F101, providing a pretty beefy chip for what it can do out of the box. 
 ![close up of stm32](/assets/images/stm_closeup.png)
 
-For a bit I did go down the road of trying to read the chips memory and possibly reprogram it with my own code (which would be _very_ nice since the board would give me connections to everything right away) but ultimately decided not too because:    
+For a bit I did go down the road of trying to read the chips memory and possibly reprogram it with my own code (which would be _very_ nice since the board has connections to all of the components) but ultimately decided not too because:    
 
 1) I couldn't get anything that made sense out of any of the open pins on the board   
 2) I don't know enough about hardware to say for certain there wasn't some kind of protection and/or encryption in place for the chip and   
-3) This wasn't the particular rabbit hole I wanted to go down at the time. When you're in a rabbit hole in _another_ rabbit hole you gotta know when to stop digging  
+3) This wasn't the particular rabbit hole I wanted to go down at the time. When you're already in a rabbit hole (in _another_ rabbit hole) you gotta know when to stop digging  
 
 I gave up and decided to replace the board with something else to drive everything, but since this vacuum is so easy to reassemble I set it aside to maybe come back and figure it out later. 
 
