@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-01T15:02:20-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Making an RC Roomba</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Roomba" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;My journey into RC consumer electronic vacuuming started with a patent for mapping out rooms autonomously. This blog post has &lt;em&gt;nothing&lt;/em&gt; to do with that patent, but this remote control robot vacuum wouldn’t exist if I didn’t have this other idea living rent free in my head for years now.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-10-16T16:26:36-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dumptrucks’s Blog</title><subtitle>A blog about tech stuff, partially completed projects and other general  fun maker centric things</subtitle><entry><title type="html">Building a Meshtastic Solar Node</title><link href="http://localhost:4000/maker/2026/10/16/solar-node.html" rel="alternate" type="text/html" title="Building a Meshtastic Solar Node" /><published>2026-10-16T15:49:38-05:00</published><updated>2026-10-16T15:49:38-05:00</updated><id>http://localhost:4000/maker/2026/10/16/solar-node</id><content type="html" xml:base="http://localhost:4000/maker/2026/10/16/solar-node.html">&lt;p&gt;It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get &lt;em&gt;miles&lt;/em&gt; of range with just the tiny ducky antennas that came with the radios.&lt;/p&gt;
+
+&lt;p&gt;I enjoyed messing with the radios so much I created &lt;a href=&quot;https://github.com/lmatte7/meshtastic-go&quot;&gt;meshtastic-go&lt;/a&gt;, a CLI tool built in Go that let me run commands without needing a Python environment. As time went on and other projects came and went, I always came back to dabble with Meshtastic, but never managed to pick up another radio in the wild.&lt;/p&gt;
+
+&lt;p&gt;Flash forward to one month ago and to my shock and surprise the Nodes have arrived! Just in my small corner of southern Indiana I can see over &lt;em&gt;100&lt;/em&gt; nodes, which is truly shocking. It’s so exciting to see an open-source project break into the general consciousness to escape the more nerdy corners on the internet. Knowing that now there are nodes out there and there’s chatter to follow, I got the itch to build a node I could throw up somewhere high, power it with a solar panel and use it to monitor my local mesh.&lt;/p&gt;
+
+&lt;h2 id=&quot;le-materials&quot;&gt;Le Materials&lt;/h2&gt;
+&lt;p&gt;When working on a project I have a &lt;del&gt;desire for pain&lt;/del&gt; guiding principle to try to reuse as many existing parts as I can. I like to keep an eye out for yard sales, free things, auctions and generally accumulate parts that seem like they may be useful later. To make sure this doesn’t turn into full-blown hoarding I have a simple rule. When there’s a project to be done, the parts pile is the first place to check for materials. Thankfully the parts pile was quite generous and gave me almost everything I needed!&lt;/p&gt;
+
+&lt;h4 id=&quot;solar-panel&quot;&gt;Solar Panel&lt;/h4&gt;
+&lt;p&gt;This is a panel I received from Amazon as part of their “Vine” program. If you’ve never heard of it, you sign up to receive free items from Amazon merchants in exchange for giving their product a review. It sounds great and there are plenty of stories of people finding items that retail for hundreds of dollars for free, but in reality you have to dig through pages of junk and still pay taxes on the items you receive. During my time on Vine I managed to snag a few different solar panels that output USB power, so we can reuse one for this project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/solar_node/solar_panel.jpg&quot; alt=&quot;solar_panel.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;pelican-style-enclosure&quot;&gt;“Pelican” Style Enclosure&lt;/h4&gt;
+&lt;p&gt;This is a generic pelican clone I picked up from Menards for $8 on clearance. It’s a solid case, should be waterproof enough for this project and has a hole to route wires through.&lt;/p&gt;
+&lt;h4 id=&quot;batteries&quot;&gt;Batteries&lt;/h4&gt;
+&lt;p&gt;To power this project, we’re going to dip into an old cordless wet mop a friend no longer wanted. Many of the modern “cordless” electric appliances use 18650 cells in varying configurations for their battery packs. As long as you follow the safety rules for working with these cells, they can be harvested and reused for many different projects! I have a plan to write a follow-up blog with more information on how to harvest these handy little dudes for your particular project needs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/solar_node/battery_pack.jpg&quot; alt=&quot;battery_pack.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;radios&quot;&gt;Radios&lt;/h4&gt;
+&lt;p&gt;I did end up buying a new &lt;a href=&quot;https://store.rokland.com/products/heltec-wifi-lora-32v4-esp32s3-sx1262-lora-node-meshtastic-lorawan&quot;&gt;Radio&lt;/a&gt; for this. My radios are all pushing about six years and are in the “legacy” firmware support for Meshtastic. I figured if I was going to make this a hopefully “set and forget” node I should get a newer, nicer radio. All of the other hardware for the radio (like GPS antennas and the LoRa antenna) can thankfully come from the radio stash. After some research into what was available the other deciding factor in buying a new board instead of re-using a granddaddy board is…&lt;/p&gt;
+
+&lt;h3 id=&quot;power-management&quot;&gt;Power Management&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Disclaimer&lt;/em&gt;: My knowledge of batteries and power management is just enough to cobble things together and not blow them up. I’m not an expert and still learning, so come to this next section with your grains of salt ready.&lt;/p&gt;
+
+&lt;p&gt;These new LoRa boards can come with some &lt;em&gt;sweet&lt;/em&gt; built-in power management options. I have a box of TP4056 battery charger modules that are still getting doled out, and a few spare Adafruit PowerBoosts to get them up to 5V that could solve the problem of running an ESP32, but why dip into my precious PowerBoost supply (they’re out of stock every time I check :cry:) when I could grab a board that supports it! 
+We’ll go in the solar input directly from the solar panel (sorry USB, you’re getting snipped) and then right into the lithium-ion battery port for our batteries. To help with battery life the plan is to use two 18650s in parallel to give us more juice.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;edit&lt;/em&gt;: After some testing two didn’t make it through a few days of clouds, so we’re up to four! We also have now routed around the solar port on the Heltec because its charging is limited to a max of 500mA. Because of that we can pull out one of the aforementioned TP4056 modules from the box, wire the 4 parallel 18650s to the B terminals, send the out to the battery in on the Heltec and send the snipped solar panel leads to the IN ports. This board charges up to 1000mA so we should get a faster charge on brighter days to fill up our battery pack.&lt;/p&gt;
+
+&lt;p&gt;(I forgot to snap pictures of the 4 cell configuration, so keep in mind all pictures of the project below are the V1.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/solar_node/testing_outside.jpg&quot; alt=&quot;testing_outside.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This rig is also itself a test for what we can get away with in a solar node. It’ll live outside where I can easily replace components if (&lt;strong&gt;ahem&lt;/strong&gt; when) they fail, so if this doesn’t work we’ll use a better solution in the final product.&lt;/p&gt;
+
+&lt;p&gt;To waterproof the device I decided to trust the label and see what happens! Will I regret it? Only time will tell! For now let’s assume the case as provided from that store where you save big money (if you’re from the Midwest I assume you’re hating me for a song that’s stuck in your head right about now) will do its job. I’ll just focus on waterproofing the parts of the box that are left open for wire routing, namely the pressure hole that I’m leaving open for just that purpose!&lt;/p&gt;
+
+&lt;p&gt;After I figured out the final wiring, ran a test with everything routed to confirm I could get nodes, and then &lt;em&gt;double-checked&lt;/em&gt; everything was good (I have a history of sealing projects too early, don’t ask), I used some good ol’ hot glue to fill up the hole and assume it’ll hold. I’ll also point the hole downwards and mount the components up just in case there’s pooling. Assuming you’ve failed when waterproofing something means you won’t ever be disappointed, just amazed if it actually works!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/solar_node/case_wired_up.jpg&quot; alt=&quot;case_wired_up.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Before this goes up high I’ll probably use caulk, but I’m saving future me the trouble of having to change these wires out by using heat gun friendly hot glue)&lt;/p&gt;
+
+&lt;p&gt;Flashing the firmware is a breeze for Meshtastic these days. I almost exclusively use the web flasher. The hardest part is remembering the Bluetooth PIN is by default 123456 and that you &lt;em&gt;don’t&lt;/em&gt; need to be clever and look for a key in the serial console. Not that I did that…for a long time.&lt;/p&gt;
+
+&lt;h3 id=&quot;client-modes&quot;&gt;Client Modes&lt;/h3&gt;
+&lt;p&gt;Let’s take a second to talk about client modes for Meshtastic. The different roles can be confusing, and most of the time &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLIENT&lt;/code&gt; will get you to your end goal for whatever your purpose. I recommend reading the excellent guide on &lt;a href=&quot;https://meshtastic.org/blog/choosing-the-right-device-role/&quot;&gt;client roles&lt;/a&gt; from the Meshtastic team to find out more, but for this configuration (a beefier client at a higher elevation acting as a relay for a less well positioned radio) we have the perfect pre-built option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLIENT_BASE&lt;/code&gt;. This mode lets the operator set a priority node when broadcasting messages and means my little node in the office gets premium airtime from my better positioned solar node. My office client can take advantage of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLIENT_MUTE&lt;/code&gt; to stay quiet when messages come in from the mesh. I don’t have any radios within a few miles of me, but might as well practice being a good member of the mesh and not rebroadcast things I know my solar node will handle.&lt;/p&gt;
+
+&lt;p&gt;Why not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROUTER&lt;/code&gt;, you ask? (If you didn’t ask and I’ve forced a question upon you, forgive me.) It’s because &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROUTER&lt;/code&gt; is for a HAM radio operator with a tower. The best description I’ve seen is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROUTER&lt;/code&gt; should connect cities to the same mesh. My little node will be well positioned, but not &lt;em&gt;that&lt;/em&gt; well positioned.&lt;/p&gt;
+
+&lt;h3 id=&quot;remote-configuration&quot;&gt;Remote Configuration&lt;/h3&gt;
+
+&lt;p&gt;One other consideration is how can I configure this node once it’s up? I mean I could stand underneath it outside and wave my phone up as far as my 5 foot 8 and a half reach can get me, but Bluetooth will always betray you when you need it most. Let’s instead set up &lt;a href=&quot;https://meshtastic.org/docs/configuration/remote-admin/&quot;&gt;remote admin&lt;/a&gt; on our node so we can manage it with our office node!&lt;/p&gt;
+
+&lt;p&gt;Doing so is fairly easy with Meshtastic these days, but some things still tripped me up with the setup. First remember that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLIENT_BASE&lt;/code&gt; lets you add a favorite radio to prioritize rebroadcasting messages from, but you have to do that from the app. To authenticate for remote management you also have to copy your controlling radio’s public key to the node you want to manage. Both of these require the app, so make sure these get done before you toss it up in a tree.&lt;/p&gt;
+
+&lt;p&gt;Here’s what tripped me up: first, you have to &lt;em&gt;enable&lt;/em&gt; remote administration on the app.
+&lt;img src=&quot;/assets/images/solar_node/turn_on_app_admin.jpg&quot; alt=&quot;turn_on_app_admin.jpg&quot; /&gt;
+And then to manage it, you select your managed node from a new dropdown available on the settings page.
+&lt;img src=&quot;/assets/images/solar_node/configure_connected_node.jpg&quot; alt=&quot;configure_connected_node.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;one-last-thing&quot;&gt;One Last Thing&lt;/h3&gt;
+&lt;p&gt;One last consideration: Meshtastic or MeshCore? I honestly don’t know enough about MeshCore to say if it’s worth trying out or not. I’ve been working with Meshtastic for a long time and have seen it transition between maintenance teams and keep on kicking. MeshCore is a newer project that, while very cool, doesn’t have the same history. Does it mean I won’t try it? Well, no—flashing is free and I can see what’s out there! But as of this writing my final plan is still to live on the Meshtastic network as long as there are other mesh heads to talk to.&lt;/p&gt;
+&lt;h3 id=&quot;finally&quot;&gt;Finally!&lt;/h3&gt;
+&lt;p&gt;It lives! 
+&lt;img src=&quot;/assets/images/solar_node/outside_da_shed.jpg&quot; alt=&quot;outside_da_shed.jpg&quot; /&gt;
+&lt;img src=&quot;/assets/images/solar_node/on_da_shed.jpg&quot; alt=&quot;on_da_shed.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So far it gets significantly better range than my office window node and it’s not even that high. I’ll leave it out for a few weeks to test the weatherproofing, but assuming everything works fine there will be a follow-up blog post where I scheme up a way to get this in a really tall tree on my property. The plan right now is some string and a drone, but hopefully the final plan will be a bit more professional (&lt;strong&gt;spoiler&lt;/strong&gt;: it won’t be)&lt;/p&gt;</content><author><name></name></author><category term="Maker" /><summary type="html">It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get miles of range with just the tiny ducky antennas that came with the radios.</summary></entry><entry><title type="html">Making an RC Roomba</title><link href="http://localhost:4000/maker/2022/11/26/rc_robot.html" rel="alternate" type="text/html" title="Making an RC Roomba" /><published>2022-11-26T14:49:38-06:00</published><updated>2022-11-26T14:49:38-06:00</updated><id>http://localhost:4000/maker/2022/11/26/rc_robot</id><content type="html" xml:base="http://localhost:4000/maker/2022/11/26/rc_robot.html">&lt;p&gt;My journey into RC consumer electronic vacuuming started with a patent for mapping out rooms autonomously. This blog post has &lt;em&gt;nothing&lt;/em&gt; to do with that patent, but this remote control robot vacuum wouldn’t exist if I didn’t have this other idea living rent free in my head for years now.&lt;/p&gt;
 
 &lt;p&gt;What is it? How did I do it? How many things did I fry in the process of making it? (Hint: too many). These and all your other burning questions will be answered after the break.&lt;/p&gt;
 
@@ -20,17 +91,17 @@
 &lt;h2 id=&quot;teardown-and-part-cataloging&quot;&gt;Teardown and part cataloging&lt;/h2&gt;
 
 &lt;p&gt;Let’s start with a nice before picture and then we’ll get to the innards
-&lt;img src=&quot;/assets/images/hoover_top.png&quot; alt=&quot;hoover_top&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/images/rc_robot/hoover_top.png&quot; alt=&quot;hoover_top&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And after a reasonably straightforward top removal we ended up with this:
-&lt;img src=&quot;/assets/images/hoover_no_top.png&quot; alt=&quot;hoover_no_top&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/images/rc_robot/hoover_no_top.png&quot; alt=&quot;hoover_no_top&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The above photo leaves out the collector for dirt/dust/debris, the vacuum motor and a few bump sensors. Each sensor connects to the main board with an easy to remove connector and there weren’t any gotchas during disassembly.&lt;/p&gt;
 
 &lt;p&gt;I am in no way an expert at tearing things apart successfully, but I would give Hoover an ifixit (for me it’s usually ibreakit) score of 9/10. Everything is included in a way that makes sense and there isn’t anything that can’t be removed in a way that doesn’t let you put it back in again. If anything breaks on this vacuum and a replacement part is available it wouldn’t be difficult to swap the new part in.&lt;/p&gt;
 
 &lt;p&gt;The brains of our little vacuum friend are a STM32F101, providing a pretty beefy chip for what it can do out of the box. 
-&lt;img src=&quot;/assets/images/stm_closeup.png&quot; alt=&quot;close up of stm32&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/assets/images/rc_robot/stm_closeup.png&quot; alt=&quot;close up of stm32&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For a bit I did go down the road of trying to read the chips memory and attempting to reprogram it with my own code (which would be &lt;em&gt;very&lt;/em&gt; nice since the board has connections to all of the components) but ultimately decided not too because:&lt;/p&gt;
 
@@ -43,13 +114,13 @@
 &lt;p&gt;Continuing on with the tear down! There are a lot of goodies in this little vacuum that would be easy to repurpose without too much trouble. Keeping in mind that the code would have to be reimplemented to get everything working it has nice components with plugs that include:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Motors with hall effects sensors 
-&lt;img src=&quot;/assets/images/motor_hall_effect.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/images/rc_robot/motor_hall_effect.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
   &lt;li&gt;4 IR distance sensors&lt;/li&gt;
   &lt;li&gt;2 Bump sensors&lt;/li&gt;
   &lt;li&gt;3 12V motors&lt;/li&gt;
   &lt;li&gt;1 12V vacuum motor&lt;/li&gt;
   &lt;li&gt;1 12V 2000mAh battery
-&lt;img src=&quot;/assets/images/hoover_battery.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
+&lt;img src=&quot;/assets/images/rc_robot/hoover_battery.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Just having all of this would be worth the $20 I paid for it already, but to add even more value every component has clip connectors that make hooking them up to something else a &lt;em&gt;breeze&lt;/em&gt;. What a deal!&lt;/p&gt;
@@ -63,7 +134,7 @@
 
 &lt;p&gt;For this I used my trusty DIY benchtop power supply repurposed from an old UPS. It’s ain’t pretty, but it works great for the kind of things I like to tinker with.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/hey_it_does_a_good_job.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/rc_robot/hey_it_does_a_good_job.png&quot; alt=&quot;battery picture&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Running 5V to two wires and testing each pin on the motor cable showed me the first two were what I needed. The voltage for the pins could also be reversed to spin the motor the opposite direction. These were 12V motors, so I was able to run them up to 12 volts with no issues (and no smoke).&lt;/p&gt;
 
@@ -71,13 +142,13 @@
 
 &lt;p&gt;This vacuum motor was the final one to figure out, and it proved to be a bit tricky.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/vacuum_motor.png&quot; alt=&quot;picture of vacuum motor&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/rc_robot/vacuum_motor.png&quot; alt=&quot;picture of vacuum motor&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I was able to find some information based on the model, but testing each wire with the same method used for the other motors didn’t produce any results. I had recently taken apart a cordless stick vacuum and saw its vacuum motor was brushless, so I thought this could be the same situation. This motor wasn’t easily taken apart, and I really didn’t want to break it since vacuuming is…. uh….. the &lt;em&gt;main&lt;/em&gt; feature of my vacuum pal.&lt;/p&gt;
 
 &lt;p&gt;Thankfully I had some RC equipment that I could use to test the motor. Brushless motors are three phase, which means the motor needs three wires with pulses sent at a set frequency to get it to spin. I grabbed an electronic speed controller (ESC), powered it up and started testing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/vacuum_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/rc_robot/vacuum_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;
 After running through each pin and every combination of wires (the three wires in a brushless motor aren’t order dependent, so there weren’t too many to try out) nothing was spinning. I decided to peel up the stickers on the motor and found a LB11867F motor controller! I of course knew exactly what this was an realized I needed to ground pin #3 to tell the motor to run at full speed*.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -93,7 +164,7 @@ After running through each pin and every combination of wires (the three wires i
 
 &lt;p&gt;I also had code already written that would connect to a PS4 controller with bluetooth and use the joysticks to drive two directional motors on a tracked vehicle and liked the time it would save me. The final wiring proved to be fairly simple, with each of the four motors hooked up to a block on the motor controller, the power from the batteries going into the power on the controller and a buck converter stepping down the voltage to run the Pi.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/three_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/rc_robot/three_motor_test.png&quot; alt=&quot;vacuum motor test&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A quick test confirmed all of the motors worked, but I didn’t have time to reassemble and test the full vacuum. Things got busy and it sat around for a few weeks before I got back to it, and at some point the wires came loose. When I redid the wiring I was in a rush, and didn’t notice the wires to the buck converter were backwards, so when I plugged it in there was a &lt;em&gt;worrying&lt;/em&gt; amount of smoke.&lt;/p&gt;
 

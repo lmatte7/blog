@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Building a Meshtastic Solar Node</title><!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Building a Meshtastic Solar Node" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get miles of range with just the tiny ducky antennas that came with the radios." />
+<meta property="og:description" content="It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get miles of range with just the tiny ducky antennas that came with the radios." />
+<link rel="canonical" href="http://localhost:4000/maker/2026/10/16/solar-node.html" />
+<meta property="og:url" content="http://localhost:4000/maker/2026/10/16/solar-node.html" />
+<meta property="og:site_name" content="Dumptrucks’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-10-16T15:49:38-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Building a Meshtastic Solar Node" />
+<script type="application/ld+json">
+{"headline":"Building a Meshtastic Solar Node","dateModified":"2026-10-16T15:49:38-05:00","datePublished":"2026-10-16T15:49:38-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/maker/2026/10/16/solar-node.html"},"url":"http://localhost:4000/maker/2026/10/16/solar-node.html","@type":"BlogPosting","description":"It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get miles of range with just the tiny ducky antennas that came with the radios.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Dumptrucks&apos;s Blog" /><link rel="shortcut icon" type="image/x-icon" href="" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head><body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/">..</a><article>
+  <p class="post-meta">
+    <time datetime="2026-10-16 15:49:38 -0500">2026-10-16</time>
+  </p>
+  
+  <h1>Building a Meshtastic Solar Node</h1>
+
+  <p>It’s been a few years since I messed with Meshtastic. I originally found it when investigating a mesh background for a Halo-style radar system for airsoft (a project perpetually on my back burner) and loved the idea. I bought a few radios, flashed them with the right firmware and was amazed I could get <em>miles</em> of range with just the tiny ducky antennas that came with the radios.</p>
+
+<p>I enjoyed messing with the radios so much I created <a href="https://github.com/lmatte7/meshtastic-go">meshtastic-go</a>, a CLI tool built in Go that let me run commands without needing a Python environment. As time went on and other projects came and went, I always came back to dabble with Meshtastic, but never managed to pick up another radio in the wild.</p>
+
+<p>Flash forward to one month ago and to my shock and surprise the Nodes have arrived! Just in my small corner of southern Indiana I can see over <em>100</em> nodes, which is truly shocking. It’s so exciting to see an open-source project break into the general consciousness to escape the more nerdy corners on the internet. Knowing that now there are nodes out there and there’s chatter to follow, I got the itch to build a node I could throw up somewhere high, power it with a solar panel and use it to monitor my local mesh.</p>
+
+<h2 id="le-materials">Le Materials</h2>
+<p>When working on a project I have a <del>desire for pain</del> guiding principle to try to reuse as many existing parts as I can. I like to keep an eye out for yard sales, free things, auctions and generally accumulate parts that seem like they may be useful later. To make sure this doesn’t turn into full-blown hoarding I have a simple rule. When there’s a project to be done, the parts pile is the first place to check for materials. Thankfully the parts pile was quite generous and gave me almost everything I needed!</p>
+
+<h4 id="solar-panel">Solar Panel</h4>
+<p>This is a panel I received from Amazon as part of their “Vine” program. If you’ve never heard of it, you sign up to receive free items from Amazon merchants in exchange for giving their product a review. It sounds great and there are plenty of stories of people finding items that retail for hundreds of dollars for free, but in reality you have to dig through pages of junk and still pay taxes on the items you receive. During my time on Vine I managed to snag a few different solar panels that output USB power, so we can reuse one for this project.</p>
+
+<p><img src="/assets/images/solar_node/solar_panel.jpg" alt="solar_panel.jpg" /></p>
+
+<h4 id="pelican-style-enclosure">“Pelican” Style Enclosure</h4>
+<p>This is a generic pelican clone I picked up from Menards for $8 on clearance. It’s a solid case, should be waterproof enough for this project and has a hole to route wires through.</p>
+<h4 id="batteries">Batteries</h4>
+<p>To power this project, we’re going to dip into an old cordless wet mop a friend no longer wanted. Many of the modern “cordless” electric appliances use 18650 cells in varying configurations for their battery packs. As long as you follow the safety rules for working with these cells, they can be harvested and reused for many different projects! I have a plan to write a follow-up blog with more information on how to harvest these handy little dudes for your particular project needs.</p>
+
+<p><img src="/assets/images/solar_node/battery_pack.jpg" alt="battery_pack.jpg" /></p>
+
+<h4 id="radios">Radios</h4>
+<p>I did end up buying a new <a href="https://store.rokland.com/products/heltec-wifi-lora-32v4-esp32s3-sx1262-lora-node-meshtastic-lorawan">Radio</a> for this. My radios are all pushing about six years and are in the “legacy” firmware support for Meshtastic. I figured if I was going to make this a hopefully “set and forget” node I should get a newer, nicer radio. All of the other hardware for the radio (like GPS antennas and the LoRa antenna) can thankfully come from the radio stash. After some research into what was available the other deciding factor in buying a new board instead of re-using a granddaddy board is…</p>
+
+<h3 id="power-management">Power Management</h3>
+<p><em>Disclaimer</em>: My knowledge of batteries and power management is just enough to cobble things together and not blow them up. I’m not an expert and still learning, so come to this next section with your grains of salt ready.</p>
+
+<p>These new LoRa boards can come with some <em>sweet</em> built-in power management options. I have a box of TP4056 battery charger modules that are still getting doled out, and a few spare Adafruit PowerBoosts to get them up to 5V that could solve the problem of running an ESP32, but why dip into my precious PowerBoost supply (they’re out of stock every time I check :cry:) when I could grab a board that supports it! 
+We’ll go in the solar input directly from the solar panel (sorry USB, you’re getting snipped) and then right into the lithium-ion battery port for our batteries. To help with battery life the plan is to use two 18650s in parallel to give us more juice.</p>
+
+<p><em>edit</em>: After some testing two didn’t make it through a few days of clouds, so we’re up to four! We also have now routed around the solar port on the Heltec because its charging is limited to a max of 500mA. Because of that we can pull out one of the aforementioned TP4056 modules from the box, wire the 4 parallel 18650s to the B terminals, send the out to the battery in on the Heltec and send the snipped solar panel leads to the IN ports. This board charges up to 1000mA so we should get a faster charge on brighter days to fill up our battery pack.</p>
+
+<p>(I forgot to snap pictures of the 4 cell configuration, so keep in mind all pictures of the project below are the V1.)</p>
+
+<p><img src="/assets/images/solar_node/testing_outside.jpg" alt="testing_outside.jpg" /></p>
+
+<p>This rig is also itself a test for what we can get away with in a solar node. It’ll live outside where I can easily replace components if (<strong>ahem</strong> when) they fail, so if this doesn’t work we’ll use a better solution in the final product.</p>
+
+<p>To waterproof the device I decided to trust the label and see what happens! Will I regret it? Only time will tell! For now let’s assume the case as provided from that store where you save big money (if you’re from the Midwest I assume you’re hating me for a song that’s stuck in your head right about now) will do its job. I’ll just focus on waterproofing the parts of the box that are left open for wire routing, namely the pressure hole that I’m leaving open for just that purpose!</p>
+
+<p>After I figured out the final wiring, ran a test with everything routed to confirm I could get nodes, and then <em>double-checked</em> everything was good (I have a history of sealing projects too early, don’t ask), I used some good ol’ hot glue to fill up the hole and assume it’ll hold. I’ll also point the hole downwards and mount the components up just in case there’s pooling. Assuming you’ve failed when waterproofing something means you won’t ever be disappointed, just amazed if it actually works!</p>
+
+<p><img src="/assets/images/solar_node/case_wired_up.jpg" alt="case_wired_up.jpg" /></p>
+
+<p>(Before this goes up high I’ll probably use caulk, but I’m saving future me the trouble of having to change these wires out by using heat gun friendly hot glue)</p>
+
+<p>Flashing the firmware is a breeze for Meshtastic these days. I almost exclusively use the web flasher. The hardest part is remembering the Bluetooth PIN is by default 123456 and that you <em>don’t</em> need to be clever and look for a key in the serial console. Not that I did that…for a long time.</p>
+
+<h3 id="client-modes">Client Modes</h3>
+<p>Let’s take a second to talk about client modes for Meshtastic. The different roles can be confusing, and most of the time <code class="language-plaintext highlighter-rouge">CLIENT</code> will get you to your end goal for whatever your purpose. I recommend reading the excellent guide on <a href="https://meshtastic.org/blog/choosing-the-right-device-role/">client roles</a> from the Meshtastic team to find out more, but for this configuration (a beefier client at a higher elevation acting as a relay for a less well positioned radio) we have the perfect pre-built option <code class="language-plaintext highlighter-rouge">CLIENT_BASE</code>. This mode lets the operator set a priority node when broadcasting messages and means my little node in the office gets premium airtime from my better positioned solar node. My office client can take advantage of <code class="language-plaintext highlighter-rouge">CLIENT_MUTE</code> to stay quiet when messages come in from the mesh. I don’t have any radios within a few miles of me, but might as well practice being a good member of the mesh and not rebroadcast things I know my solar node will handle.</p>
+
+<p>Why not <code class="language-plaintext highlighter-rouge">ROUTER</code>, you ask? (If you didn’t ask and I’ve forced a question upon you, forgive me.) It’s because <code class="language-plaintext highlighter-rouge">ROUTER</code> is for a HAM radio operator with a tower. The best description I’ve seen is a <code class="language-plaintext highlighter-rouge">ROUTER</code> should connect cities to the same mesh. My little node will be well positioned, but not <em>that</em> well positioned.</p>
+
+<h3 id="remote-configuration">Remote Configuration</h3>
+
+<p>One other consideration is how can I configure this node once it’s up? I mean I could stand underneath it outside and wave my phone up as far as my 5 foot 8 and a half reach can get me, but Bluetooth will always betray you when you need it most. Let’s instead set up <a href="https://meshtastic.org/docs/configuration/remote-admin/">remote admin</a> on our node so we can manage it with our office node!</p>
+
+<p>Doing so is fairly easy with Meshtastic these days, but some things still tripped me up with the setup. First remember that <code class="language-plaintext highlighter-rouge">CLIENT_BASE</code> lets you add a favorite radio to prioritize rebroadcasting messages from, but you have to do that from the app. To authenticate for remote management you also have to copy your controlling radio’s public key to the node you want to manage. Both of these require the app, so make sure these get done before you toss it up in a tree.</p>
+
+<p>Here’s what tripped me up: first, you have to <em>enable</em> remote administration on the app.
+<img src="/assets/images/solar_node/turn_on_app_admin.jpg" alt="turn_on_app_admin.jpg" />
+And then to manage it, you select your managed node from a new dropdown available on the settings page.
+<img src="/assets/images/solar_node/configure_connected_node.jpg" alt="configure_connected_node.jpg" /></p>
+
+<h3 id="one-last-thing">One Last Thing</h3>
+<p>One last consideration: Meshtastic or MeshCore? I honestly don’t know enough about MeshCore to say if it’s worth trying out or not. I’ve been working with Meshtastic for a long time and have seen it transition between maintenance teams and keep on kicking. MeshCore is a newer project that, while very cool, doesn’t have the same history. Does it mean I won’t try it? Well, no—flashing is free and I can see what’s out there! But as of this writing my final plan is still to live on the Meshtastic network as long as there are other mesh heads to talk to.</p>
+<h3 id="finally">Finally!</h3>
+<p>It lives! 
+<img src="/assets/images/solar_node/outside_da_shed.jpg" alt="outside_da_shed.jpg" />
+<img src="/assets/images/solar_node/on_da_shed.jpg" alt="on_da_shed.jpg" /></p>
+
+<p>So far it gets significantly better range than my office window node and it’s not even that high. I’ll leave it out for a few weeks to test the weatherproofing, but assuming everything works fine there will be a follow-up blog post where I scheme up a way to get this in a really tall tree on my property. The plan right now is some string and a drone, but hopefully the final plan will be a bit more professional (<strong>spoiler</strong>: it won’t be)</p>
+
+</article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -29,17 +29,17 @@ The first step to get there was a good ol' teardown.
 ## Teardown and part cataloging
 
 Let's start with a nice before picture and then we'll get to the innards
-![hoover_top](/assets/images/hoover_top.png)
+![hoover_top](/assets/images/rc_robot/hoover_top.png)
 
 And after a reasonably straightforward top removal we ended up with this:
-![hoover_no_top](/assets/images/hoover_no_top.png)
+![hoover_no_top](/assets/images/rc_robot/hoover_no_top.png)
 
 The above photo leaves out the collector for dirt/dust/debris, the vacuum motor and a few bump sensors. Each sensor connects to the main board with an easy to remove connector and there weren't any gotchas during disassembly. 
 
 I am in no way an expert at tearing things apart successfully, but I would give Hoover an ifixit (for me it's usually ibreakit) score of 9/10. Everything is included in a way that makes sense and there isn't anything that can't be removed in a way that doesn't let you put it back in again. If anything breaks on this vacuum and a replacement part is available it wouldn't be difficult to swap the new part in. 
 
 The brains of our little vacuum friend are a STM32F101, providing a pretty beefy chip for what it can do out of the box. 
-![close up of stm32](/assets/images/stm_closeup.png)
+![close up of stm32](/assets/images/rc_robot/stm_closeup.png)
 
 For a bit I did go down the road of trying to read the chips memory and attempting to reprogram it with my own code (which would be _very_ nice since the board has connections to all of the components) but ultimately decided not too because:    
 
@@ -52,13 +52,13 @@ I gave up and decided to replace the board with something else to drive everythi
 
 Continuing on with the tear down! There are a lot of goodies in this little vacuum that would be easy to repurpose without too much trouble. Keeping in mind that the code would have to be reimplemented to get everything working it has nice components with plugs that include: 
 - Motors with hall effects sensors 
-![battery picture](/assets/images/motor_hall_effect.png)
+![battery picture](/assets/images/rc_robot/motor_hall_effect.png)
 - 4 IR distance sensors 
 - 2 Bump sensors
 - 3 12V motors 
 - 1 12V vacuum motor
 - 1 12V 2000mAh battery
-![battery picture](/assets/images/hoover_battery.png)
+![battery picture](/assets/images/rc_robot/hoover_battery.png)
 
 Just having all of this would be worth the $20 I paid for it already, but to add even more value every component has clip connectors that make hooking them up to something else a _breeze_. What a deal!
 
@@ -71,7 +71,7 @@ I couldn't find anything online to help me figure out how the motors worked beyo
 
 For this I used my trusty DIY benchtop power supply repurposed from an old UPS. It's ain't pretty, but it works great for the kind of things I like to tinker with.
 
-![battery picture](/assets/images/hey_it_does_a_good_job.png)
+![battery picture](/assets/images/rc_robot/hey_it_does_a_good_job.png)
 
 Running 5V to two wires and testing each pin on the motor cable showed me the first two were what I needed. The voltage for the pins could also be reversed to spin the motor the opposite direction. These were 12V motors, so I was able to run them up to 12 volts with no issues (and no smoke).
 
@@ -80,13 +80,13 @@ This method worked for getting the brush motors to work as well, just with less 
 This vacuum motor was the final one to figure out, and it proved to be a bit tricky. 
 
 
-![picture of vacuum motor](/assets/images/vacuum_motor.png)
+![picture of vacuum motor](/assets/images/rc_robot/vacuum_motor.png)
 
 I was able to find some information based on the model, but testing each wire with the same method used for the other motors didn't produce any results. I had recently taken apart a cordless stick vacuum and saw its vacuum motor was brushless, so I thought this could be the same situation. This motor wasn't easily taken apart, and I really didn't want to break it since vacuuming is…. uh….. the _main_ feature of my vacuum pal. 
 
 Thankfully I had some RC equipment that I could use to test the motor. Brushless motors are three phase, which means the motor needs three wires with pulses sent at a set frequency to get it to spin. I grabbed an electronic speed controller (ESC), powered it up and started testing. 
 
-![vacuum motor test](/assets/images/vacuum_motor_test.png)
+![vacuum motor test](/assets/images/rc_robot/vacuum_motor_test.png)
 After running through each pin and every combination of wires (the three wires in a brushless motor aren't order dependent, so there weren't too many to try out) nothing was spinning. I decided to peel up the stickers on the motor and found a LB11867F motor controller! I of course knew exactly what this was an realized I needed to ground pin #3 to tell the motor to run at full speed*.
 
 ---
@@ -102,7 +102,7 @@ To drive all of the motors I wanted to reuse the platform for my previous protot
 
 I also had code already written that would connect to a PS4 controller with bluetooth and use the joysticks to drive two directional motors on a tracked vehicle and liked the time it would save me. The final wiring proved to be fairly simple, with each of the four motors hooked up to a block on the motor controller, the power from the batteries going into the power on the controller and a buck converter stepping down the voltage to run the Pi. 
 
-![vacuum motor test](/assets/images/three_motor_test.png)
+![vacuum motor test](/assets/images/rc_robot/three_motor_test.png)
 
 A quick test confirmed all of the motors worked, but I didn't have time to reassemble and test the full vacuum. Things got busy and it sat around for a few weeks before I got back to it, and at some point the wires came loose. When I redid the wiring I was in a rush, and didn't notice the wires to the buck converter were backwards, so when I plugged it in there was a _worrying_ amount of smoke. 
 

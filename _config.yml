@@ -28,7 +28,7 @@ url: "https://dumptrucksblog.com" # the base hostname & protocol for your site, 
 github_username:  lmatte7
 
 # Build settings
-remote_theme: no-style-please
+theme: no-style-please
 plugins:
   - jekyll-feed
 
